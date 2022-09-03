@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from "preact";
-import { tw } from "@twind";
+import { pt, tw } from "@twind";
 import Counter from "../islands/Counter.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
 
@@ -18,7 +18,7 @@ export const handler: Handlers<Deno.DirEntry[]> = {
 
 export default function Home({ data }: PageProps<Deno.DirEntry[]>) {
   return (
-    <div class={tw`p-4 mx-auto max-w-screen-md`}>
+    <div class={pt()}>
       <img
         src="/logo.svg"
         height="100px"
