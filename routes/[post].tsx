@@ -15,7 +15,6 @@ export const handler: Handlers<string> = {
     const md = await Deno.readTextFile(
       `../blog-content/iress/${ctx.params.post}`,
     );
-    // TODO: copy whats done here: https://github.com/denoland/fresh/blob/main/www/routes/docs/%5B...slug%5D.tsx
     const mu = marky(md);
     return ctx.render(mu);
   },
