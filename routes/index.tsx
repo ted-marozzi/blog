@@ -3,6 +3,7 @@ import { h } from "preact";
 import { pt, tw } from "@twind";
 import Counter from "../islands/Counter.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import { Head } from "$fresh/runtime.ts";
 
 export const handler: Handlers<Deno.DirEntry[]> = {
   async GET(_, ctx) {
@@ -19,6 +20,14 @@ export const handler: Handlers<Deno.DirEntry[]> = {
 export default function Home({ data }: PageProps<Deno.DirEntry[]>) {
   return (
     <div class={pt()}>
+      <Head>
+        <title>Blog moments</title>
+        <meta charSet="UTF-8" />
+        <meta name="description" content="My blog" />
+        <meta name="keywords" content="HTML, CSS, JavaScript" />
+        <meta name="author" content="Ted Marozzi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <img
         src="/logo.svg"
         height="100px"
